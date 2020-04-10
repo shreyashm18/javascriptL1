@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 12</title>
+    <style>
+        .center {
+            margin: auto;
+            width: 60%;
+            border: 3px solid gray;
+            padding: 10px;
+          }
+          
+    </style>
+</head>
+<body>
+    <h2>Question 12</h2>
+    <div id='form' align="center" class="center w3-container">
+        <h1>Railway seat Reservation form</h1>
+    <form name="myForm">
+        <table 
+                cellspacing ='12'
+                cellpadding = '5'>
+            <tr>
+                <td>Name :</td>
+                <td><input type="text" name="userName" id="userName" required></td>
+            </tr>
+            <tr>
+                <td>Your 10 digit Phone Number</td>
+                <td><input type="text" name="phoneNumber" maxlength="10" required></td>
+            </tr>
+            <tr>
+                <td>Date :</td>
+                <td><input type="date" name="jDate" id="date" required></td>
+            </tr>
+            <tr>
+                <td>Time :</td>
+                <td><input type="time" name="jTime" id="time" ></td>
+            </tr>
+            <tr>
+                <td>Journey From :</td>
+                
+                <td><select id="fromStation" name="fromStation">
+                    <option value="Pune Station" selected>Pune Station</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Dadar">Dadar</option>
+                    <option value="Nagpur">Nagpur</option>
+                  </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Journey To :</td>
+                <td><select id="toStation" name="toStation">
+                    <option value="Pune Station" >Pune Station</option>
+                    <option value="Mumbai" selected>Mumbai</option>
+                    <option value="Dadar">Dadar</option>
+                    <option value="Nagpur">Nagpur</option>
+                  </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Class :</td>
+                <td><input type="text" name="seatClass"></td>
+            </tr>
+            <tr>
+                <td>How many seats ?</td>
+                <td><input type="text" name="Psngr" value="1"></td>
+            </tr>
+            <tr>
+                <td><input type="button" onclick="booking()" name="submit" id ='btn' value="Submit Form"></td>
+            </tr>
+        </table>
+    </form>
+    <p id ='abc'></p>
+</div>
+<!-- <div align = 'center'>
+    
+</div> -->
+<script src="q12.js"></script>
+</body>
+</html>

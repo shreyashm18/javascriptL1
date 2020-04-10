@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 9</title>
+</head>
+<body>
+    <h2>Question 9</h2>
+    <br><br>
+    <p id = 'ptag'>Click below button if you want to see full detail of CD that we have in our shop</p>
+    <input type="button" onclick="displayAllDetails()" id="btn" value="See details"><br>
+
+    <script>
+        CD = {
+            CD_Name : "Marvels",
+            CD_publisher : "Martin Goodman",
+            CD_price : 780
+        }
+
+        function displayAllDetails(){
+            var final_price = (CD.CD_price) + (CD.CD_price)*(10/100) - (((CD.CD_price) + (CD.CD_price)*(10/100)) * (3/100));
+            document.getElementById("ptag").innerHTML = "CD name is <b>" + CD.CD_Name + "</b> <br> Published by <b>" +
+                CD.CD_publisher + "</b> <br> It's base price is <b> " + CD.CD_price + "  INR </b> but its final price after adding 10% tax and getting 3% discount is <b>" + final_price + " INR"
+
+            elem = document.getElementById('btn');
+            elem.value = 'Clear';
+            elem.addEventListener('click' ,function(){ location.reload()})
+        }
+    </script>
+</body>
+</html>

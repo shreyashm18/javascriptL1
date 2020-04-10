@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 10</title>
+</head>
+<body>
+    <h2>Question 10</h2><br>
+    <p>You can enter colour that you want in background</p><br>
+    <form name = 'myForm'>
+        
+        Enter Your Favourite colour here : <input type="text" name="color" id = 'color'>
+        <br><p>After submitting background color will be changed to Your given color</p>
+        <p id = 'clear'> Click here to submit </p>  <input type="button" id = 'btn' value = 'Submit' onclick="fun()">
+        
+    </form>
+        <p id = 'demo'></p>
+
+    <script>
+        function fun(){
+            var clr = document.forms['myForm']['color'].value;
+            if (!clr == ''){
+                if (!clr.trim().length == 0){
+                    var s = new Option().style;
+                    s.color = clr.trim();
+                    if (s.color == clr.trim()){  
+                        document.getElementById('demo').innerHTML = "You entered " + clr + " color " ;        
+                        document.body.style.backgroundColor = clr
+
+                        elem = document.getElementById('btn');
+                        elem.value = 'Clear';
+                        elem.addEventListener('click' ,function(){ location.reload()})
+                        document.getElementById('clear').innerHTML = 'Click here to reset'
+                    }
+                    else{
+                        document.getElementById('demo').innerHTML = clr + " is not a valid colour, Please enter valid color" ;
+                    }
+                }
+                else{
+                    document.getElementById('demo').innerHTML = "Please enter something" ; 
+                }
+            }
+            else{
+                document.getElementById('demo').innerHTML = "Please enter something" ;  
+            }
+            
+        }
+    </script>
+</body>
+</html>

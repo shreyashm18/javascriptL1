@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>java-script L1 q1</title>
+</head>
+<body>
+    <h2>Question 1</h2>
+    <br><br>
+    <p id = "demo"></p> <br><br>
+    <p id = 'ptag'>It will show name of alternate employees which are stored in array</p>
+    <input id = 'btn' type="button" onclick="fun()" value = "Click me"></button>
+    <script>
+        var array = ['shreyash','pratik','kishor','nitin','omkar','ashok','sanket','vrushabh','shiv','pankaj'];
+        
+        function fun(){
+            var txt = '';
+            for (x in array){
+                txt += array[x] + " , ";
+            }
+            document.getElementById('demo').innerHTML = "All Emloyees are: <br>" + txt ;
+
+            text = "";
+            for (var x =0 ; x < array.length ; x +=2){
+                text +=x+1 + ' ' + array[x] + '<br>'; 
+            }         
+             
+            document.getElementById('ptag').innerHTML ='alternate Employees are : <br>' +  text;
+            var elem = document.getElementById('btn');
+            elem.value = 'Reset';
+            elem.addEventListener('click' , function (){ location.reload();})
+
+            
+        }
+        
+    </script>
+
+
+
+</body>
+</html>

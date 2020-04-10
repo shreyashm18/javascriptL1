@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>java-script L1 q2</title>
+</head>
+<body>
+    <h2>Question 2</h2>
+    <br><br>
+    <p id = "demo"></p>
+    <p id = 'ptag'>It will show average mark of 10 subjects marks stored in array</p>
+    <input id = 'btn' type="button" onclick="fun()" value = "Find Average"></button>
+    <script>
+        var array = [87,15,96,48,23,65,99,84,100,37];
+        
+        function fun(){
+            var txt = '';
+            for (x in array){
+                txt += array[x] + " , ";
+            }
+            document.getElementById('demo').innerHTML = "All marks are <br>" + txt ;
+
+            var len = array.length;
+            var sum = 0;
+            for (x in array){
+                sum += array[x];
+            }   
+            var average = sum/len;
+            document.getElementById('ptag').innerHTML = "Average is " + average ;
+            var elem = document.getElementById('btn');
+            elem.value = 'Reset';
+            elem.addEventListener('click' , function (){ location.reload();})
+
+            
+        }
+        
+    </script>
+
+
+
+</body>
+</html>

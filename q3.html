@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>java-script L1 q3</title>
+</head>
+<body>
+    <h2>Question 3</h2><br><br>
+    
+        <table>
+            <tr>
+                <td>First No :</td>
+                <td><input id = 'n1' type="text" placeholder="Number 1" name ="first"></td>
+            </tr>
+            <tr>
+                <td>Second No :</td>
+                <td><input id = 'n2' type="text" placeholder="Number 2" name = "sec"></td>
+            </tr>
+        </table>
+            <input type ="button" id="btn" onclick="Add()" value = 'add'>
+        
+        
+    <p id='sum'></p>
+</body>
+    <script>
+        function Add(){
+            
+            var n1 = Number(document.getElementById('n1').value);
+            
+            var n2 = Number(document.getElementById('n2').value);
+            var sum = 0;
+            var text = "";
+            
+            if (n1 == '' || n2 == '' ){
+                text = "input values cant be empty"
+            }
+            
+            else if (isNaN(n1) || isNaN(n2)){
+                text = "Sorry.... Only Nos will be added"
+            }
+            
+            else {
+                sum = n1 + n2;
+                text += sum ;
+                //return sum;
+            }
+            //alert(text)
+            //return text;
+            document.getElementById('sum').innerHTML = text;
+            var elem = document.getElementById('btn');
+            elem.value = 'Reset';
+            elem.addEventListener('click' , function (){ location.reload();})
+
+        }
+    </script>
+
+
+</html>

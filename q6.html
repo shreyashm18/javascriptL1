@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 6</title>
+</head>
+<body>
+    <h2>Question 6</h2><br><br>
+    <p>Demo test just to see foreground colour </p>
+    <input type="button" id = 'btn' onclick="changeColor()" value ="Click to enter your fav color">
+    <p id="demo"></p>
+    <button onclick="window.location.reload();">Reset Everything</button>
+    
+    <script>
+        
+            function changeColor() {
+                var a = prompt("Input backgroud color (Enter 'No' if you are done)");
+                if (a !== 'No') {
+                    document.body.style.backgroundColor = a;
+                    var b = prompt("Input foreground color");
+                    document.body.style.color = b;
+                    window.setTimeout(changeColor, 0);
+                }
+                document.getElementById('demo').innerHTML = "See Foreground colour changes to " + b + " and background colour is " + a
+            }
+            
+        
+        
+    </script>
+</body>
+</html>
